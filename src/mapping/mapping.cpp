@@ -471,3 +471,17 @@ std::string Mapping::PrintCompact()
 {
   return loop_nest.PrintCompact(tiling::TransposeMasks(datatype_bypass_nest));
 }
+
+std::string Mapping::PrintYAML(const std::vector<std::string>& storage_level_names)
+{
+  YAML::Emitter yaml_out;
+  yaml_out << YAML::BeginMap;
+  yaml_out << YAML::Key << "mapping";
+  yaml_out << YAML::Value;
+  yaml_out << YAML::BeginSeq;
+  this->FormatAsYaml(yaml_out, storage_level_names);
+  yaml_out << YAML::EndSeq;
+  yaml_out << YAML::EndMap;
+
+  return yaml_out.c_str();
+}

@@ -84,6 +84,8 @@ struct Mapping
                       const std::vector<problem::PerDataSpace<std::uint64_t>>& utilized_instances);
 
   std::string PrintCompact();
+
+  std::string PrintYAML(const std::vector<std::string>& storage_level_names);
 };
 
 std::ostream& operator << (std::ostream& out, const Mapping& mapping);

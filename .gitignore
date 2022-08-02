@@ -38,3 +38,6 @@ GPATH
 GRTAGS
 GSYMS
 GTAGS
+
+# Other
+stats/
